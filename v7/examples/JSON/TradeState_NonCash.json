@@ -1,7 +1,8 @@
 {
     "@model": "cdm",
     "@type": "cdm.event.common.TradeState",
-    "@version": "7.5.0",
+    "@version": "7.8.0",
+    "@key": "b7e7307a",
     "trade": {
         "product": {
             "taxonomy": [
@@ -30,9 +31,12 @@
                         },
                         "priceQuantity": {
                             "quantitySchedule": {
-                                "@ref:scoped": "MarketValue-1"
+                                "@ref:scoped": "AssetQuantity-1"
                             },
                             "priceSchedule": [
+                                {
+                                    "@ref:scoped": "AssetPrice-1"
+                                },
                                 {
                                     "@ref:scoped": "LendingFee-1"
                                 }
@@ -309,31 +313,6 @@
         ],
         "executionDetails": {
             "executionType": "OnVenue"
-        },
-        "contractDetails": {
-            "documentation": [
-                {
-                    "agreementDate": "2020-01-01",
-                    "legalAgreementIdentification": {
-                        "agreementName": {
-                            "agreementType": "MasterAgreement",
-                            "masterAgreementType": {
-                                "@data": "GMSLA"
-                            }
-                        },
-                        "publisher": "ISLA",
-                        "vintage": 2018
-                    },
-                    "contractualParty": [
-                        {
-                            "@ref:external": "UKBroker"
-                        },
-                        {
-                            "@ref:external": "UKLender"
-                        }
-                    ]
-                }
-            ]
         }
     },
     "state": {
